@@ -15,7 +15,6 @@ Sun Yat-sen University
 
 - Project page: https://guowei-zou.github.io/coflow/
 - Code: https://github.com/Guowei-Zou/coflow-release
-- Checkpoints: https://huggingface.co/elainacamille/CoFlow-checkpoints
 - Datasets: see the dataset instructions below.
 
 ## What is included
@@ -37,10 +36,9 @@ Sun Yat-sen University
 - `scripts/`: dataset conversion and SMAC installation helper scripts.
 - `third_party/`: vendored environment adapters used by the experiments.
 
-Datasets, logs, W&B runs, paper sources, and generated figures are not included.
-Paper-writing, table-building, and plotting scripts are also excluded. Public
-checkpoints are hosted separately at the link above. Place datasets under
-`diffuser/datasets/data/` before training.
+Datasets, checkpoints, logs, W&B runs, paper sources, and generated figures are
+not included. Paper-writing, table-building, and plotting scripts are also
+excluded. Place datasets under `diffuser/datasets/data/` before training.
 
 ## Setup
 
