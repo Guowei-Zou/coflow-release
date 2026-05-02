@@ -1,9 +1,23 @@
-# CoFlow Release
+# CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making
 
-This directory contains the source code used for the supplementary material of
+This repository contains the official source-code release for
 `CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making`.
 The code keeps the original `diffuser` Python package name for compatibility
 with the underlying MADiff-style training framework.
+
+## Authors
+
+Guowei Zou, Haitao Wang, Beiwen Zhang, Boning Zhang, and Hejun Wu
+
+Sun Yat-sen University
+
+## Links
+
+- Project page: https://guowei-zou.github.io/coflow/
+- Paper: https://guowei-zou.github.io/coflow/assets/paper.pdf
+- Code: https://github.com/Guowei-Zou/coflow-release
+- Checkpoints: https://huggingface.co/elainacamille/CoFlow-checkpoints
+- Datasets: see the dataset instructions below.
 
 ## What is included
 
@@ -24,9 +38,10 @@ with the underlying MADiff-style training framework.
 - `scripts/`: dataset conversion and SMAC installation helper scripts.
 - `third_party/`: vendored environment adapters used by the experiments.
 
-Datasets, checkpoints, logs, W&B runs, paper sources, and generated figures are
-not included. Paper-writing, table-building, and plotting scripts are also
-excluded. Place datasets under `diffuser/datasets/data/` before training.
+Datasets, logs, W&B runs, paper sources, and generated figures are not included.
+Paper-writing, table-building, and plotting scripts are also excluded. Public
+checkpoints are hosted separately at the link above. Place datasets under
+`diffuser/datasets/data/` before training.
 
 ## Setup
 
@@ -206,5 +221,15 @@ public datasets have been installed.
   should remain outside the supplementary archive.
 - Third-party code keeps its original licenses in `third_party/`.
 - The top-level `LICENSE` applies to the CoFlow source in this release.
-- Author names, local paths, paper source files, plotting scripts, generated
-  figures, logs, checkpoints, and datasets are intentionally excluded.
+- Paper source files, plotting scripts, generated figures, logs, checkpoints,
+  and datasets are intentionally excluded.
+
+## Citation
+
+```bibtex
+@misc{coflow2026,
+  title={CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making},
+  author={Zou, Guowei and Wang, Haitao and Zhang, Beiwen and Zhang, Boning and Wu, Hejun},
+  year={2026}
+}
+```

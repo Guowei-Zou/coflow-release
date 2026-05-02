@@ -3,5 +3,12 @@ from setuptools import find_packages, setup
 setup(
     name="coflow",
     description="CoFlow: coordinated few-step flow for offline multi-agent decision making.",
+    author="Guowei Zou, Haitao Wang, Beiwen Zhang, Boning Zhang, and Hejun Wu",
+    url="https://github.com/Guowei-Zou/coflow-release",
+    project_urls={
+        "Project Page": "https://guowei-zou.github.io/coflow/",
+        "Paper": "https://guowei-zou.github.io/coflow/assets/paper.pdf",
+        "Checkpoints": "https://huggingface.co/elainacamille/CoFlow-checkpoints",
+    },
     packages=find_packages(include=["diffuser", "diffuser.*"]),
 )
