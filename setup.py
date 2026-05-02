@@ -7,7 +7,6 @@ setup(
     url="https://github.com/Guowei-Zou/coflow-release",
     project_urls={
         "Project Page": "https://guowei-zou.github.io/coflow/",
-        "Paper": "https://guowei-zou.github.io/coflow/assets/paper.pdf",
         "Checkpoints": "https://huggingface.co/elainacamille/CoFlow-checkpoints",
     },
     packages=find_packages(include=["diffuser", "diffuser.*"]),

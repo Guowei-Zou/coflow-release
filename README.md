@@ -14,7 +14,6 @@ Sun Yat-sen University
 ## Links
 
 - Project page: https://guowei-zou.github.io/coflow/
-- Paper: https://guowei-zou.github.io/coflow/assets/paper.pdf
 - Code: https://github.com/Guowei-Zou/coflow-release
 - Checkpoints: https://huggingface.co/elainacamille/CoFlow-checkpoints
 - Datasets: see the dataset instructions below.
@@ -223,13 +222,3 @@ public datasets have been installed.
 - The top-level `LICENSE` applies to the CoFlow source in this release.
 - Paper source files, plotting scripts, generated figures, logs, checkpoints,
   and datasets are intentionally excluded.
-
-## Citation
-
-```bibtex
-@misc{coflow2026,
-  title={CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making},
-  author={Zou, Guowei and Wang, Haitao and Zhang, Beiwen and Zhang, Boning and Wu, Hejun},
-  year={2026}
-}
-```
