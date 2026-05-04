@@ -1,7 +1,7 @@
-# CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making
+# coflow
 
 This repository contains the official source-code release for
-`CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making`.
+`coflow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making`.
 The code keeps the original `diffuser` Python package name for compatibility
 with the underlying MADiff-style training framework.
 
@@ -28,9 +28,9 @@ Sun Yat-sen University
   training objective, few-step sampler, inverse-dynamics head, and optional
   dispersive regularization.
 - `diffuser/models/meanflow/`: MeanFlow and improved MeanFlow helpers.
-- `exp_specs_disp_imf/`: main CoFlow experiment configurations.
+- `exp_specs_disp_imf/`: main coflow experiment configurations.
 - `exp_specs_disp/`: CoFlow-base configurations without the improved objective.
-- `exp_specs/`: legacy MADiff/baseline and ablation configurations.
+- `exp_specs/`: MADiff baseline and ablation configurations.
 - `run_experiment.py`, `run_scripts/train.py`, `run_scripts/evaluate.py`:
   training and evaluation entry points.
 - `scripts/`: dataset conversion and SMAC installation helper scripts.
@@ -142,7 +142,7 @@ pip install git+https://github.com/oxwhirl/smac.git
 Use `run_experiment.py` with one YAML file. The `-g` flag selects the GPU id.
 Training YAML files sweep five seeds by default: `100, 200, 300, 400, 500`.
 
-Main CoFlow examples:
+Main coflow examples:
 
 ```bash
 # MPE, centralized execution variant (CoFlow-C in the paper)
@@ -217,6 +217,6 @@ public datasets have been installed.
 - The package is intentionally small; large `.npy`, `.pt`, log, and W&B files
   should remain outside the supplementary archive.
 - Third-party code keeps its original licenses in `third_party/`.
-- The top-level `LICENSE` applies to the CoFlow source in this release.
+- The top-level `LICENSE` applies to the coflow source in this release.
 - Paper source files, plotting scripts, generated figures, logs, checkpoints,
   and datasets are intentionally excluded.
