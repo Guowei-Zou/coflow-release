@@ -209,36 +209,6 @@ python run_scripts/eval_mamujoco_corrected.py -g 0 --base_dir logs/ma_meanflow_m
 python run_scripts/eval_smac_corrected.py -g 0 --base_dir logs/ma_meanflow_smac --num_eval 10
 ```
 
-## Quick Code Check
-
-Without datasets, you can still run syntax, import, and configuration checks:
-
-```bash
-python -m compileall -q diffuser/models run_experiment.py run_scripts/train.py run_scripts/evaluate.py
-python run_experiment.py -h
-python - <<'PY'
-import yaml
-from diffuser.utils.launcher_util import build_nested_variant_generator
-with open("exp_specs_disp_imf/mpe/spread/ma_imf_mpe_spread_attn_exp_disp.yaml") as f:
-    spec = yaml.load(f, Loader=yaml.FullLoader)
-variants = list(build_nested_variant_generator(spec)())
-print(len(variants), [v["seed"] for v in variants])
-PY
-```
-
-A training command without local data should fail at the first missing dataset
-path with `FileNotFoundError`. That is the expected boundary check before the
-public datasets have been installed.
-
-## Notes
-
-- The package is intentionally small; large `.npy`, `.pt`, log, and W&B files
-  should remain outside the supplementary archive.
-- Third-party code keeps its original licenses in `third_party/`.
-- The top-level `LICENSE` applies to the coflow source in this release.
-- Paper source files, plotting scripts, generated figures, logs, checkpoints,
-  and datasets are intentionally excluded.
-
 ## Citation
 
 ```bibtex
