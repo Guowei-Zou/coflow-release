@@ -40,11 +40,9 @@ without distilling a joint teacher into independent agents.
 
 ## Qualitative Rollouts
 
-| MPE · Tag (Expert) | MPE · World (Expert) |
-| :---: | :---: |
-| ![MPE Tag Expert](assets/mpe_tag_expert.gif) | ![MPE World Expert](assets/mpe_world_expert.gif) |
-| **SMAC · 5m_vs_6m (Good)** | **MA-MuJoCo · 2-Ant (Good)** |
-| ![SMAC 5m_vs_6m Good](assets/smac_5m_vs_6m_good.gif) | ![MA-MuJoCo 2-Ant Good](assets/mamujoco_2ant_good.gif) |
+| MPE · Tag (Expert) | MPE · World (Expert) | SMAC · 5m_vs_6m (Good) | MA-MuJoCo · 2-Ant (Good) |
+| :---: | :---: | :---: | :---: |
+| ![MPE Tag Expert](assets/mpe_tag_expert.gif) | ![MPE World Expert](assets/mpe_world_expert.gif) | ![SMAC 5m_vs_6m Good](assets/smac_5m_vs_6m_good.gif) | ![MA-MuJoCo 2-Ant Good](assets/mamujoco_2ant_good.gif) |
 
 ## Results
 
