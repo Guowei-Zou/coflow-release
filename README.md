@@ -2,12 +2,12 @@
 
 This repository contains the official source-code release for
 `coflow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making`.
-The code keeps the original `diffuser` Python package name for compatibility
-with the underlying MADiff-style training framework.
 
 ## Authors
 
-Guowei Zou, Haitao Wang, Beiwen Zhang, Boning Zhang, and Hejun Wu
+[Guowei Zou](https://guowei-zou.github.io/Guowei-Zou/), Haitao Wang,
+[Beiwen Zhang](https://github.com/BeiwenZhang), Boning Zhang, and
+[Hejun Wu](https://cse.sysu.edu.cn/teacher/WuHejun)
 
 Sun Yat-sen University
 
@@ -15,30 +15,50 @@ Sun Yat-sen University
 
 - Project page: https://guowei-zou.github.io/coflow/
 - Code: https://github.com/Guowei-Zou/coflow-release
+- Checkpoints: https://huggingface.co/Guowei-Zou/CoFlow-checkpoints
 - Datasets: see the dataset instructions below.
 
-## What is included
+## Motivation
 
-- `diffuser/`: models, datasets, evaluators, renderers, and training utilities.
-- `diffuser/models/ma_temporal.py`: shared temporal U-Net with cross-agent
-  attention blocks used for coordinated velocity prediction.
-- `diffuser/models/temporal.py`: temporal attention layers with zero-initialized
-  residual gates (`gamma`), corresponding to adaptive coordination gating.
-- `diffuser/models/ma_meanflow_wrapper.py`: multi-agent averaged-velocity
-  training objective, few-step sampler, inverse-dynamics head, and optional
-  dispersive regularization.
-- `diffuser/models/meanflow/`: MeanFlow and improved MeanFlow helpers.
-- `exp_specs_disp_imf/`: main coflow experiment configurations.
-- `exp_specs_disp/`: CoFlow-base configurations without the improved objective.
-- `exp_specs/`: MADiff baseline and ablation configurations.
-- `run_experiment.py`, `run_scripts/train.py`, `run_scripts/evaluate.py`:
-  training and evaluation entry points.
-- `scripts/`: dataset conversion and SMAC installation helper scripts.
-- `third_party/`: vendored environment adapters used by the experiments.
+![CoFlow motivation](assets/overview.png)
 
-Datasets, checkpoints, logs, W&B runs, paper sources, and generated figures are
-not included. Paper-writing, table-building, and plotting scripts are also
-excluded. Place datasets under `diffuser/datasets/data/` before training.
+CoFlow targets the quality-efficiency dilemma in offline multi-agent trajectory
+generation. Existing diffusion methods preserve coordination but require many
+denoising steps; existing few-step routes accelerate inference but weaken
+cross-agent coupling. CoFlow occupies the Pareto region where few-step inference
+and coordination preservation coexist.
+
+## Method
+
+![CoFlow framework](assets/framework.png)
+
+CoFlow learns a natively joint-coupled averaged velocity field for offline
+multi-agent reinforcement learning. It combines Coordinated Velocity Attention,
+adaptive coordination gating, and a finite-difference consistency surrogate so
+coordinated multi-agent trajectories can be generated in 1--3 denoising steps
+without distilling a joint teacher into independent agents.
+
+## Qualitative Rollouts
+
+| MPE · Tag (Expert) | MPE · World (Expert) |
+| :---: | :---: |
+| ![MPE Tag Expert](assets/mpe_tag_expert.gif) | ![MPE World Expert](assets/mpe_world_expert.gif) |
+| **SMAC · 5m_vs_6m (Good)** | **MA-MuJoCo · 2-Ant (Good)** |
+| ![SMAC 5m_vs_6m Good](assets/smac_5m_vs_6m_good.gif) | ![MA-MuJoCo 2-Ant Good](assets/mamujoco_2ant_good.gif) |
+
+## Results
+
+**MPE**
+
+![MPE results](assets/table_mpe.png)
+
+**SMAC**
+
+![SMAC results](assets/table_smac.png)
+
+**MA-MuJoCo**
+
+![MA-MuJoCo results](assets/table_mamujoco.png)
 
 ## Setup
 
@@ -220,3 +240,21 @@ public datasets have been installed.
 - The top-level `LICENSE` applies to the coflow source in this release.
 - Paper source files, plotting scripts, generated figures, logs, checkpoints,
   and datasets are intentionally excluded.
+
+## Citation
+
+```bibtex
+@misc{zou2026coflowcoordinatedfewstepflow,
+      title={CoFlow: Coordinated Few-Step Flow for Offline Multi-Agent Decision Making},
+      author={Guowei Zou and Haitao Wang and Beiwen Zhang and Boning Zhang and Hejun Wu},
+      year={2026},
+      eprint={2605.01457},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2605.01457},
+}
+```
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Guowei-Zou/coflow-release&type=Date)](https://star-history.com/#Guowei-Zou/coflow-release&Date)
