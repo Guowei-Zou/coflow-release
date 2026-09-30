@@ -69,7 +69,8 @@ conda create -n coflow python=3.8
 conda activate coflow
 
 pip install torch==1.12.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113
-pip install -r requirements.txt
+python -m pip install pip==23.0.1 setuptools==65.5.0 wheel==0.38.4
+python -m pip install -r requirements.txt
 ```
 
 W&B logging is disabled in the release YAML files by default. If you enable it
@@ -226,3 +227,36 @@ python run_scripts/eval_smac_corrected.py -g 0 --base_dir logs/ma_meanflow_smac 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=Guowei-Zou/coflow-release&type=Date)](https://star-history.com/#Guowei-Zou/coflow-release&Date)
+
+## Benchmark dependencies
+
+Use a separate environment for each repository: the projects share the
+`diffuser` package name and must not be installed together. The default
+`requirements.txt` supports the MPE training and evaluation path. Legacy
+Gym requires the pip/setuptools/wheel bootstrap versions shown above.
+The previous all-in-one dependency list is retained as
+`requirements-historical.txt` for reference, not as the installation command.
+
+For SMAC, additionally install `requirements-smac.txt` and StarCraft II
+with the appropriate maps. For MA-MuJoCo, install `requirements-mujoco.txt`,
+MuJoCo 2.1.0, and set `LD_LIBRARY_PATH` to include its `bin` directory.
+D4RL/mjrl and TensorFlow dataset converters are optional legacy integrations,
+not required to train from the supplied MPE NumPy layout.
+
+Verify the installation before providing datasets:
+
+```bash
+python scripts/check_install.py
+```
+
+On a minimal Linux host, install a C/C++ compiler, Python development headers,
+libcurl/OpenSSL development headers (for the logger's pycurl dependency),
+and OpenGL runtime libraries before pip installation. Headless runs can set
+`SDL_AUDIODRIVER=dummy`.
+
+The supported examples use vector observations in MPE, SMAC, and MA-MuJoCo.
+Inherited image-policy and PyBullet prototypes are not part of the tested
+release workflow. Full benchmark training and all historical checkpoints
+are not certified by the short installation/runtime checks.
+
+See [release verification](VERIFICATION.md) for the tested installation and runtime paths and their scope.
