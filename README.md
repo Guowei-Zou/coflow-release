@@ -15,7 +15,7 @@ Sun Yat-sen University
 
 [![Project Page](https://img.shields.io/badge/Project-Page-1f72c1?style=for-the-badge&logo=githubpages&logoColor=white)](https://guowei-zou.github.io/coflow/)
 [![arXiv](https://img.shields.io/badge/arXiv-2605.01457-b31b1b?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2605.01457)
-[![Checkpoints](https://img.shields.io/badge/Checkpoints-Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/Guowei-Zou/CoFlow-checkpoints)
+[![Checkpoints](https://img.shields.io/badge/Checkpoints-Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/coflow-project/CoFlow-checkpoints)
 [![Datasets](https://img.shields.io/badge/Datasets-Instructions-4c8c4a?style=for-the-badge&logo=databricks&logoColor=white)](#datasets)
 
 ## Motivation
